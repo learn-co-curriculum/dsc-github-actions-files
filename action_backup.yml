@@ -1,0 +1,48 @@
+name: Curriculum Solution Branch Splitter
+
+on:
+  push:
+    branches: curriculum
+    paths: index.ipynb
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8.5
+          check-latest: true
+          
+      - name: Install GitPython
+        run: pip install GitPython
+        
+      - name: Install Jupyter Notebook
+        run: pip install notebook
+          
+      - name: Check git version
+        run: git --version
+
+      - name: Install github-to-canvas
+        run: gem install github-to-canvas 
+        
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+      
+      - uses: actions/checkout@v3
+        with:
+          ref: solution
+        
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: curriculum
+
+      - name: Branch splitter sync
+        run: python splitter.py  -m 'syncing changes across branches'
+        
