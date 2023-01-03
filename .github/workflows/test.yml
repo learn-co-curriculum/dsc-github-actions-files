@@ -1,0 +1,21 @@
+name: Remote Actions Test File
+
+on:    
+  workflow_call:
+    secrets: inherit
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+          check-latest: true
+
+      - name:
+        run: python print("the script has been called")
