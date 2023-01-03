@@ -1,7 +1,8 @@
 name: Update Canvas
 
 on:    
-  workflow_dispatch:
+  workflow_call:
+    secrets: inherit
 
 jobs:
   build:
