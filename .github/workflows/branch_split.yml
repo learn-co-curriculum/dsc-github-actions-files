@@ -1,9 +1,7 @@
 name: Curriculum Solution Branch Splitter
 
 on:
-  push:
-    branches: curriculum
-    paths: index.ipynb
+  workflow_call:
 
 jobs:
   build:
