@@ -1,5 +1,5 @@
 # Data Science Curriculum Maintenance Tools
-> __Version 1.0.0__
+> __Version: v1.0.0__
 
 ## Curriculum Solution Branch Splitter
 > Requires: __[run_branch_splitter.yml]__  
