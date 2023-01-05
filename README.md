@@ -7,7 +7,7 @@
 
 
 ### Usage
-Usage of this action requires the addition of the action file **run_branch_splitter.yml** found in the root folder of the __main__ branch in this repository. The file needs to be saved in the repository you intend the changes to be made to, and it must be stored in .github/workflows/ folder which you will need to create. You can either download and add the file and directory via CLI, or you can do it directly in the repository. 
+Usage of this action requires the addition of the action file **run_branch_splitter.yml** found in the root folder of the __main__ branch in this repository. The file needs to be saved in the repository you intend the changes to be made to, and it must be stored in .github/workflows/ folder which you will need to create. You can either download and add the file and directory via CLI, or you can do it directly in the repository.  
 * Once you have the file, you will need to add the version to the end of the path which is located after the _uses_ argument in the yml file.
     * For example, if the current version is __1.0.0__ the path should read _learn-co-curriculum/dsc-github-actions-files/.github/workflows/branch_split.yml@v1_
     * (The second and third digits are not necessary, as these are reserved for small updates and patches to be reverse compatible)
@@ -34,5 +34,8 @@ You can watch the progress of the action and verify that it has run successfully
 ## Update Canvas
 
 > Requires: __[update_canvas.yml]__ and the presence of a __.canvas__ file in the calling repository.  
-> When triggered manually, the action will push updates to all canvas courses, where the lesson is used, by means of the _github-to-canvas_ gem. This is dependent on the presence of the __.canvas__ file. In the absence of the __.canvas__ file, one would need to be added or the update would need to be done on your local machine via the gem.
+> When triggered manually, the action will push updates to all canvas courses, where the lesson is used, by means of the _github-to-canvas_ gem. This is dependent on the presence of the __.canvas__ file. In the absence of the __.canvas__ file, one would need to be added or the update would need to be done on your local machine via the gem.  
+
+### Usage
+Usage of this action requires the addition of the action file __run_update_canvas.yml__ found in the root folder of the __main__ branch in this repository. The file needs to be saved in the repository you intend the changes to be made to, and it must be stored in .github/workflows/ folder which you will need to create. You can either download and add the file and directory via CLI, or you can do it directly in the repository. 
 
