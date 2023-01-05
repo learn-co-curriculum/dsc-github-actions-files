@@ -30,3 +30,9 @@ You can watch the progress of the action and verify that it has run successfully
 
 <img src='images/recent_actions.png' alt='Image of the actions tab which can be clicked to view the recent workflows' width=80%>
 
+
+## Update Canvas
+
+> Requires: __[update_canvas.yml]__ and the presence of a __.canvas__ file in the calling repository.  
+> When triggered manually, the action will push updates to all canvas courses, where the lesson is used, by means of the _github-to-canvas_ gem. This is dependent on the presence of the __.canvas__ file. In the absence of the __.canvas__ file, one would need to be added or the update would need to be done on your local machine via the gem.
+
