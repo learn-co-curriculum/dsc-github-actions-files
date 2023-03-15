@@ -24,9 +24,6 @@ jobs:
           
       - name: Check git version
         run: git --version
-
-      - name: Install github-to-canvas
-        run: gem install github-to-canvas 
         
       - uses: actions/checkout@v3
         with:
@@ -42,5 +39,7 @@ jobs:
           ref: curriculum
 
       - name: Branch splitter sync
+        with: 
+          repository: learn-co-curriculum/dsc-github-actions-files
         run: python learn-co-curriculum/dsc-github-actions-files/splitter.py  -m 'syncing changes across branches'
         
