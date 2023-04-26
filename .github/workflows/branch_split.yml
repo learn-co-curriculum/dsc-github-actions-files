@@ -45,5 +45,5 @@ jobs:
           path: dsc-github-actions-files
 
       - name: Branch splitter sync
-        run: python learn-co-curriculum/dsc-github-actions-files/splitter.py  -m 'syncing changes across branches'
+        run: python splitter.py  -m 'syncing changes across branches'
         
