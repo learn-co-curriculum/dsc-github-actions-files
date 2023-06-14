@@ -39,11 +39,11 @@ jobs:
         with:
           ref: curriculum
       
-      - name: Check-out devops repository
-        uses: actions/checkout@v3
-        with:
-          repository: learn-co-curriculum/dsc-github-actions-files
-          path: dsc-github-actions-files
+      #- name: Check-out devops repository
+      #  uses: actions/checkout@v3
+      #  with:
+      #    repository: learn-co-curriculum/dsc-github-actions-files
+      #    path: dsc-github-actions-files
 
       - name: Branch splitter sync
         run: python splitter.py  -m 'syncing changes across branches'
