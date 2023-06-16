@@ -45,7 +45,7 @@ jobs:
       - name: Install and run black formatter
         run : |
               pip install "black[jupyter]"
-              black .
+              black index.ipynb
           
       - name: Branch splitter sync
         run: python splitter.py  -m 'syncing changes across branches'
