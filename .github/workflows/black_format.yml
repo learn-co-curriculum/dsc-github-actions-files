@@ -43,7 +43,8 @@ jobs:
           submodules: true
           
       - name: Install and run black formatter
-        run : pip install "black[jupyter]"
+        run : |
+              pip install "black[jupyter]"
               black .
           
       - name: Branch splitter sync
