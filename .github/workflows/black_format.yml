@@ -42,9 +42,11 @@ jobs:
           ref: curriculum
           submodules: true
           
-      - name: Install and run black formatter
+      - name: Install black package
         run : pip install "black[jupyter]"
-              black .
+      
+      - name : Run black formatting
+        run : black index.ipynb
           
       - name: Branch splitter sync
         run: python splitter.py  -m 'syncing changes across branches'
