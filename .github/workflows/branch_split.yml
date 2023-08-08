@@ -28,11 +28,13 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.repository.default_branch }}
+          token: ${{secrets.DS_ACTIONS_PAT}}
           submodules: recursive
 
       - uses: actions/checkout@v3
         with:
           ref: solution
+          token: ${{secrets.DS_ACTIONS_PAT}}
           submodules: recursive
         continue-on-error: true
         
@@ -40,6 +42,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: curriculum
+          token: ${{secrets.DS_ACTIONS_PAT}}
           submodules: recursive
           
       - name: Branch splitter sync
