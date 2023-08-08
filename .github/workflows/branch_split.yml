@@ -29,13 +29,13 @@ jobs:
         with:
           ref: ${{ github.event.repository.default_branch }}
           token: ${{secrets.DS_ACTIONS_PAT}}
-          submodules: recursive
+          submodules: true
 
       - uses: actions/checkout@v3
         with:
           ref: solution
           token: ${{secrets.DS_ACTIONS_PAT}}
-          submodules: recursive
+          submodules: true
         continue-on-error: true
         
       - name: Checkout
@@ -43,7 +43,7 @@ jobs:
         with:
           ref: curriculum
           token: ${{secrets.DS_ACTIONS_PAT}}
-          submodules: recursive
+          submodules: true
           
       - name: Branch splitter sync
         run: python splitter.py  -m 'syncing changes across branches'
