@@ -25,13 +25,22 @@ jobs:
       - name: Check git version
         run: git --version
         
-      - uses: actions/checkout@v3
+      - name: Checkout curriculum branch
+        uses: actions/checkout@v3
+        with:
+          ref: curriculum
+          token: ${{secrets.DS_ACTIONS_PAT}}
+          submodules: false
+        
+      - name: Checkout main/master Branch
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.event.repository.default_branch }}
           token: ${{secrets.DS_ACTIONS_PAT}}
           submodules: false
           
-      - uses: actions/checkout@v3
+      - name: Checkout solution branch
+        uses: actions/checkout@v3
         with:
           repository: learn-co-curruculum/dsc-github-actions-files
           path: dsc-github-actions-files
@@ -43,12 +52,7 @@ jobs:
           submodules: false
         continue-on-error: true
         
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          ref: curriculum
-          token: ${{secrets.DS_ACTIONS_PAT}}
-          submodules: false
+      
           
       - name: Branch splitter sync
         run: python splitter.py  -m 'syncing changes across branches'
