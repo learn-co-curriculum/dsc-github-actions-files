@@ -49,7 +49,7 @@ jobs:
         with:
           repository: learn-co-curriculum/dsc-github-actions-files
           path: dsc-github-actions-files
-          ref: ${{ github.event.repository.default_branch }}
+          ref: main
           token: ${{secrets.DS_ACTIONS_PAT}}                              
           
       - name: Branch splitter sync (from dsc-github-actions-files repo)
