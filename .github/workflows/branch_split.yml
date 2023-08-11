@@ -28,21 +28,22 @@ jobs:
       - name: Checkout main/master branch
         uses: actions/checkout@v3
         with:
+          ref: ${{ github.event.repository.default_branch}}
           token: ${{secrets.DS_ACTIONS_PAT}}
 
       - name: Check for solution branch
         id: check-solution
         run: |
-          if git ls-remote --heads origin solutions | grep -q 'solutions$'; then
-          echo "Solutions branch exists"
-          echo "::set-output name=branch_exists::true"
+          if git ls-remote --heads origin solution | grep -q 'solution$'; then
+          echo "Solution branch exists"
+          echo "BRANCH_EXISTS=true" >> $GITHUB_ENV
           else
-          echo "Solutions branch does not exist"
-          echo "::set-output name=branch_exists::false"
+          echo "Solution branch does not exist"
+          echo "BRANCH_EXISTS=false" >> $GITHUB_ENV
           fi
 
       - name: Checkout solution branch
-        if: steps.check-solution.outputs.branch_exists == 'true'
+        if: env.BRANCH_EXISTS == 'true'
         uses: actions/checkout@v3
         with:
           ref: solution
